@@ -33,6 +33,7 @@ models:
                 values: ['Shared room', 'Private room', 'Hotel room', 'Entire home/apt']
 
       - name: minimum_nights
+        description: '{{ doc("dim_listing_cleansed__minimum_nights") }}'
         data_tests:
           - positive_values
 
