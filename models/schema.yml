@@ -38,11 +38,13 @@ models:
           - positive_values
 
   - name: dim_hosts_cleansed
+    description: Cleansed table which contains Airbnb hosts details.
     config: 
       contract: 
         enforced: true
     columns:
       - name: host_id
+        description: Primary key for hosts
         data_type: integer
         constraints:
           - type: not_null
@@ -50,11 +52,13 @@ models:
           - unique
 
       - name: host_name
+        description: Name of the host
         data_type: string
         constraints:
           - type: not_null
 
       - name: is_superhost
+        description: If the host is superhost or not
         data_type: string
         data_tests:
           - accepted_values:
@@ -62,8 +66,10 @@ models:
                 values: ['f','t']
 
       - name: created_at
+        description: When was the record created
         data_type: timestamp
       - name: updated_at
+        description: When was record the updated
         data_type: timestamp
 
   - name: fct_reviews
